@@ -8,7 +8,7 @@ export default function HeroSection() {
     return (
         <React.Fragment>
             <CssBaseline />
-            <Container className="HeroImage" maxWidth="" disableGutters="false">
+            <Container className="HeroImage" maxWidth="">
                 <Box sx={{ height: '60vh' }} />
             </Container>
         </React.Fragment>
