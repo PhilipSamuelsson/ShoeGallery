@@ -1,3 +1,12 @@
 .wrap-container {
     margin: 2rem;
 }
+
+img {
+    width: 400px;
+    height: 400px;
+}
+
+h3 {
+    font-size: 3rem;
+}

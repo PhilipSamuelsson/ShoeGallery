@@ -11,7 +11,7 @@ import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
 import AdbIcon from '@mui/icons-material/Adb'
 
-const pages = ['Home', 'Gallery', 'About us']
+const pages = ['Home', 'Agents', 'About us']
 
 function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null)
@@ -32,11 +32,16 @@ function ResponsiveAppBar() {
     return (
         <AppBar position="sticky" sx={{ bgcolor: '#333333', color: 'white' }}>
             <Container maxWidth="x1">
-                <Toolbar disableGutters>
-                    <AdbIcon
-                        sx={{ display: { xs: 'none', md: 'flex' }, mr: 4 }}
-                    />
+                <Toolbar
+                    disableGutters
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'flex-end',
+                        alignItems: 'center'
+                    }}
+                >
                     <Typography
+                        flexGrow="1"
                         variant="h6"
                         noWrap
                         component="a"
@@ -51,12 +56,12 @@ function ResponsiveAppBar() {
                             textDecoration: 'none'
                         }}
                     >
-                        Shoe Gallery
+                        Valorant Agents
                     </Typography>
 
                     <Box
                         sx={{
-                            flexGrow: 1,
+                            flexGrow: 0,
                             display: {
                                 xs: 'flex',
                                 md: 'none'
@@ -122,26 +127,35 @@ function ResponsiveAppBar() {
                             textDecoration: 'none'
                         }}
                     >
-                        Shoe Gallery
+                        Valorant Agents
                     </Typography>
                     <Box
                         sx={{
                             flexGrow: 1,
-                            display: { xs: 'none', md: 'flex' }
+                            display: { xs: 'none', md: 'flex' },
+                            justifyContent: 'flex-end'
                         }}
                     >
                         {pages.map((page) => (
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                sx={{
+                                    my: 2,
+                                    color: 'white',
+                                    display: 'block',
+                                    mr: 4
+                                }}
                             >
                                 {page}
                             </Button>
                         ))}
                     </Box>
 
-                    <Box sx={{ flexGrow: 0 }}>
+                    <Box
+                        sx={{ flexGrow: 0 }}
+                        sx={{ justifyContent: 'flex-end' }}
+                    >
                         <Menu
                             sx={{ mt: '45px' }}
                             id="menu-appbar"
