@@ -9,11 +9,14 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
-import AdbIcon from '@mui/icons-material/Adb'
+import { Link } from 'react-router-dom'
 
-const pages = ['Home', 'Agents', 'About us']
+const pages = ['Home', 'Agents', 'About']
 
 function ResponsiveAppBar() {
+
+    
+
     const [anchorElNav, setAnchorElNav] = React.useState(null)
     const [anchorElUser, setAnchorElUser] = React.useState(null)
 
@@ -30,7 +33,7 @@ function ResponsiveAppBar() {
     }
 
     return (
-        <AppBar position="sticky" sx={{ bgcolor: '#333333', color: 'white' }}>
+        <AppBar sx={{ bgcolor: '#333333', color: 'white' }}>
             <Container maxWidth="x1">
                 <Toolbar
                     disableGutters
@@ -136,26 +139,19 @@ function ResponsiveAppBar() {
                             justifyContent: 'flex-end'
                         }}
                     >
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{
-                                    my: 2,
-                                    color: 'white',
-                                    display: 'block',
-                                    mr: 4
-                                }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
+                        <Link
+                            to="/Home"
+                            onClick={handleCloseNavMenu}
+                            sx={{
+                                my: 2,
+                                color: 'white',
+                                display: 'block',
+                                mr: 4
+                            }}
+                        ></Link>
                     </Box>
 
-                    <Box
-                        sx={{ flexGrow: 0 }}
-                        sx={{ justifyContent: 'flex-end' }}
-                    >
+                    <Box sx={{ flexGrow: 0 }}>
                         <Menu
                             sx={{ mt: '45px' }}
                             id="menu-appbar"

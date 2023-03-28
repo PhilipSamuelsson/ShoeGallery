@@ -1,5 +1,8 @@
+
+
 .wrap-container {
     margin: 2rem;
+    overflow-y: hidden;
 }
 
 img {

@@ -4,14 +4,14 @@ import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 
 import GalleryGrid from './Components/GalleryGrid'
-import NavBar from './Components/Navbar/NavBar'
+import NavBarTest from './Components/Navbar/NavBarTest'
 import HeroSection from './Components/HeroSection'
 import './main.css'
 
 function App() {
     return (
         <div className="App">
-            <NavBar />
+            <NavBarTest />
             <HeroSection></HeroSection>
             <GalleryGrid />
         </div>
