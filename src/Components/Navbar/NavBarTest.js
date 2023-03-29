@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import './NavBarTest.css'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function NavBarTest() {
     useEffect(() => {
@@ -44,20 +44,16 @@ function NavBarTest() {
         <nav className="nav">
             <div className="container">
                 <div className="logo">
-                    <a href="#">Valorant Agents</a>
+                    <h2>Valorant Agents</h2>
                 </div>
                 <div id="mainListDiv" className="main_list">
                     <ul className="navlinks">
                         <li>
-                            <a href="#">Home</a>
+                            <Link to="/">Home</Link>
                         </li>
 
                         <li>
-                            <a href="#">Agents</a>
-                        </li>
-
-                        <li>
-                            <a href="#">About</a>
+                            <Link to="/about">About</Link>
                         </li>
                     </ul>
                 </div>
