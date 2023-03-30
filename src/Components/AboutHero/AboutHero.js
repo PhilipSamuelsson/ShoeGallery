@@ -9,8 +9,7 @@ export default function HeroSection() {
         <React.Fragment>
             <CssBaseline />
             <Container className="AboutHeroImage" maxWidth="">
-                <h2 className="AboutHeroText"> About us</h2>
-                <Box sx={{ height: '60vh' }} />
+                <Box sx={{ height: '80vh' }} />
             </Container>
         </React.Fragment>
     )
