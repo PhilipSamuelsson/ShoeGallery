@@ -7,9 +7,11 @@ import NavBarTest from './Components/Navbar/NavBarTest'
 import './main.css'
 import HomePage from './Pages/HomePage'
 import AboutPage from './Pages/AboutPage'
+import ContactPage from './Pages/ContactPage'
 
 import { Route, Routes } from 'react-router-dom'
 import { createBrowserRouter } from 'react-router-dom'
+import AgentDetails from './Pages/AgentDetails'
 
 createBrowserRouter([{ path: '/' }, {}])
 
@@ -20,6 +22,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/agent/:agentUuid" element={<AgentDetails />} />
+                <Route path="/contact" element={<ContactPage />} />
             </Routes>
         </div>
     )

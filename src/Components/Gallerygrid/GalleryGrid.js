@@ -4,6 +4,8 @@ import { styled } from '@mui/material/styles'
 import Paper from '@mui/material/Paper'
 import Grid from '@mui/material/Unstable_Grid2'
 import './GalleryGrid.css'
+import { Link } from 'react-router-dom'
+import Button from '@mui/material/Button'
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -34,13 +36,29 @@ function GalleryGrid() {
             <Grid container spacing={2}>
                 {data &&
                     data.data.map((agent) => (
-                        <Grid key={agent.id} xs={12} md={6} lg={4}>
+                        <Grid key={agent.id} item xs={12} md={6} lg={4}>
                             <Item>
                                 <h3>{agent.displayName}</h3>
                                 <img
                                     src={agent.fullPortrait}
                                     alt={agent.displayName}
                                 />
+                                <Link
+                                    className="link"
+                                    to={`/agent/${agent.uuid}`}
+                                >
+                                    <Button
+                                        style={{
+                                            display: 'flex',
+                                            justifyContent: 'center',
+                                            alignItems: 'center'
+                                        }}
+                                        variant="contained"
+                                        color="primary"
+                                    >
+                                        Read more
+                                    </Button>
+                                </Link>
                             </Item>
                         </Grid>
                     ))}
