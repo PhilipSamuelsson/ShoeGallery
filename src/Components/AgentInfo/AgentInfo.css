@@ -1,0 +1,37 @@
+.abilities {
+    display: flex;
+    justify-content: center;
+}
+/* .abilities img {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    margin: 20px;
+} */
+.AgentImage {
+    width: 1000px;
+    height: 1000px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.AgentName {
+    text-align: center;
+    font-size: 5rem;
+    margin-top: 200px;
+}
+
+.AbilitiesHeading {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 5rem;
+    text-decoration: underline;
+}
+
+.ability {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}

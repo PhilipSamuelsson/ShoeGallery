@@ -1,13 +1,16 @@
 import React from 'react'
 import NavBarTest from '../Components/Navbar/NavBarTest'
 import HeadingText from '../Components/HeadingText/HeadingText'
-import AboutHero from '../Components/AboutHero/AboutHero'
+import ContactHero from '../Components/ContactHero/ContactHero'
+import ContactForm from '../Components/ContactForm/ContactForm'
+
 function ContactPage() {
     return (
         <div>
             <NavBarTest />
-            <AboutHero />
+            <ContactHero />
             <HeadingText title="Contact us" />
+            <ContactForm />
         </div>
     )
 }
