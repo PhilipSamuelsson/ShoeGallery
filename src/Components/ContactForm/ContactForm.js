@@ -1,6 +1,4 @@
 import * as React from 'react'
-import Box from '@mui/material/Box'
-import TextField from '@mui/material/TextField'
 import './ContactForm.css'
 import Button from '@mui/material/Button'
 
@@ -10,58 +8,55 @@ export default function StateTextFields() {
     const [Email, setEmail] = React.useState('')
     const [msg, setMsg] = React.useState('')
 
+    const confirmText = (
+        <div className="block">
+            <h3>
+                Thank you for your message, {firstName} {lastName}.
+            </h3>
+            <p> We will reply to {Email} in the next 24 hours!</p>
+        </div>
+    )
     return (
-        <div className="formWrapper">
-            <Box
-                component="form"
-                sx={{
-                    '& > :not(style)': { m: 1, width: '60vh' }
+        <div className="block">
+            <input
+                className="input-res"
+                placeholder="Firstname"
+                type="text"
+                value={firstName}
+                onChange={(event) => {
+                    setFirstName(event.target.value)
                 }}
-                noValidate
-                autoComplete="off"
-            >
-                <TextField
-                    id="outlined-controlled"
-                    label="First Name"
-                    value={firstName}
-                    onChange={(event) => {
-                        setFirstName(event.target.value)
-                    }}
-                />
-                <TextField
-                    id="outlined-controlled"
-                    label="Last Name"
-                    value={lastName}
-                    onChange={(event) => {
-                        setLastName(event.target.value)
-                    }}
-                />
-                <TextField
-                    id="outlined-controlled"
-                    label="Email"
-                    value={Email}
-                    onChange={(event) => {
-                        setEmail(event.target.value)
-                    }}
-                />
-                <TextField
-                    multiline="true"
-                    id="outlined-controlled"
-                    label="Message"
-                    value={msg}
-                    onChange={(event) => {
-                        setMsg(event.target.value)
-                    }}
-                />
-                <Button
-                    size="small"
-                    className="SubmitButton"
-                    variant="contained"
-                    color="primary"
-                >
-                    Submit
-                </Button>
-            </Box>
+            />
+            <input
+                className="input-res"
+                placeholder="Lastname"
+                type="text"
+                value={lastName}
+                onChange={(event) => {
+                    setLastName(event.target.value)
+                }}
+            />
+            <input
+                className="input-res"
+                placeholder="Email"
+                type="email"
+                value={Email}
+                onChange={(event) => {
+                    setEmail(event.target.value)
+                }}
+            />
+            <textarea
+                className="input-res"
+                placeholder="Message"
+                value={msg}
+                onChange={(event) => {
+                    setMsg(event.target.value)
+                }}
+            />
+            <Button size="large" variant="contained" color="primary">
+                Submit
+            </Button>
+            <div> {confirmText}</div>
         </div>
     )
 }

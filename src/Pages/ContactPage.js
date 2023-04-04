@@ -4,6 +4,8 @@ import HeadingText from '../Components/HeadingText/HeadingText'
 import ContactHero from '../Components/ContactHero/ContactHero'
 import ContactForm from '../Components/ContactForm/ContactForm'
 
+
+
 function ContactPage() {
     return (
         <div>
