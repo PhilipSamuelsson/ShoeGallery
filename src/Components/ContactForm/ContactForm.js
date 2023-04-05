@@ -1,12 +1,21 @@
 import * as React from 'react'
 import './ContactForm.css'
 import Button from '@mui/material/Button'
+import { useContext } from 'react'
+import { darkMode } from '../../Pages/ContactPage'
 
 export default function StateTextFields() {
     const [firstName, setFirstName] = React.useState('')
     const [lastName, setLastName] = React.useState('')
     const [Email, setEmail] = React.useState('')
     const [msg, setMsg] = React.useState('')
+    const [toggle, setToggle] = React.useState(true)
+
+    const darkTheme = useContext(darkMode)
+    const darkStyles = {
+        backgroundColor: darkTheme ? '#333' : '#CCC',
+        color: darkTheme ? '#CCC' : '#333'
+    }
 
     const confirmText = (
         <div className="block">
@@ -16,8 +25,9 @@ export default function StateTextFields() {
             <p> We will reply to {Email} in the next 24 hours!</p>
         </div>
     )
-    return (
-        <div className="block">
+
+    const form = (
+        <div style={darkStyles} className="block">
             <input
                 className="input-res"
                 placeholder="Firstname"
@@ -53,10 +63,16 @@ export default function StateTextFields() {
                     setMsg(event.target.value)
                 }}
             />
-            <Button size="large" variant="contained" color="primary">
+            <Button
+                onClick={() => setToggle()}
+                size="large"
+                variant="contained"
+                color="primary"
+            >
                 Submit
             </Button>
-            <div> {confirmText}</div>
         </div>
     )
+
+    return <div> {toggle ? form : confirmText} </div>
 }

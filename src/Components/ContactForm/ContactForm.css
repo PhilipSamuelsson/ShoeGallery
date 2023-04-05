@@ -8,6 +8,7 @@ body {
     margin: 0 auto;
     max-width: 900px;
     padding: 50px 30px;
+    border-radius: 10px;
 }
 .input-res {
     -webkit-appearance: none;
@@ -27,4 +28,8 @@ body {
     margin: 0;
     box-sizing: border-box;
     margin-bottom: 20px;
+}
+
+p {
+    font-size: 2rem;
 }
